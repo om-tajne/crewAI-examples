@@ -9,9 +9,9 @@ class PkgDietTool(BaseTool):
     def _run(self, package_name: str) -> str:
         try:
             # Note: CrewAI also supports loading PkgDiet natively via its MCP integration 
-            # (`npx -y pkgdiet@2.0.0 mcp`), but we wrap the CLI here for zero-setup execution.
+            # (`npx -y pkgdiet@2.0.1 mcp`), but we wrap the CLI here for zero-setup execution.
             result = subprocess.run(
-                ["npx", "-y", "pkgdiet@2.0.0", "check", package_name],
+                ["npx", "-y", "pkgdiet@2.0.1", "check", package_name],
                 capture_output=True, text=True, check=True
             )
             return result.stdout
